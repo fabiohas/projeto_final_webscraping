@@ -1,14 +1,12 @@
 # Projeto de Web Scraping e Extração de Dados de Preços do Petróleo
 
 ## Descrição Geral
+
 Este projeto foi desenvolvido para realizar duas tarefas principais:
 
 1. **Web Scraping de Notícias da BBC**: Um notebook foi criado para extrair notícias relacionadas ao tópico "Israel e Gaza" diretamente do site da BBC. As notícias são coletadas com informações como título, URL, resumo e timestamp de coleta.
-
 2. **Extração de Dados de Preços do Petróleo**: Um script Python foi desenvolvido para obter os preços diários do petróleo (WTI e Brent) em um intervalo de datas especificado, utilizando a biblioteca `yfinance`.
-
 3. **Geração Automática de Requirements**: Um script Python foi criado para gerar automaticamente um arquivo `requirements.txt` com todas as dependências instaladas no ambiente.
-
 4. **Persistência de Dados em DuckDB**: Um script Python foi desenvolvido para salvar os dados gerados pelo notebook e pelo script Python em um banco de dados DuckDB.
 
 ---
@@ -16,6 +14,7 @@ Este projeto foi desenvolvido para realizar duas tarefas principais:
 ## Detalhes do Notebook: `scrapping_noticias_bbc.ipynb`
 
 ### Funcionalidades:
+
 - **Aceitação Automática de Cookies**: O notebook utiliza a biblioteca `playwright` para navegar no site da BBC e aceitar automaticamente os cookies.
 - **Extração de Notícias**: As notícias são extraídas com base em sua posição visual na página, garantindo que apenas os links relevantes sejam coletados.
 - **Salvamento em CSV**: As notícias coletadas são salvas em um arquivo CSV com as seguintes colunas:
@@ -25,6 +24,7 @@ Este projeto foi desenvolvido para realizar duas tarefas principais:
   - `timestamp_coleta`: O horário em que a notícia foi coletada.
 
 ### Tecnologias Utilizadas:
+
 - `playwright`: Para automação de navegação na web.
 - `asyncio`: Para lidar com operações assíncronas.
 - `csv`: Para salvar os dados extraídos em um arquivo.
@@ -34,6 +34,7 @@ Este projeto foi desenvolvido para realizar duas tarefas principais:
 ## Detalhes do Script Python: `extrair_dados_petroleo.py`
 
 ### Funcionalidades:
+
 - **Extração de Dados do Yahoo Finance**: O script utiliza a biblioteca `yfinance` para baixar os preços diários do petróleo (WTI e Brent).
 - **Parâmetros Personalizáveis**: O usuário pode especificar:
   - A série desejada (`wti` ou `brent`).
@@ -44,6 +45,7 @@ Este projeto foi desenvolvido para realizar duas tarefas principais:
 - **Salvamento Opcional**: Os dados podem ser salvos em um arquivo CSV.
 
 ### Tecnologias Utilizadas:
+
 - `yfinance`: Para acessar os dados financeiros do Yahoo Finance.
 - `pandas`: Para manipulação e análise dos dados extraídos.
 
@@ -52,9 +54,11 @@ Este projeto foi desenvolvido para realizar duas tarefas principais:
 ## Detalhes do Script Python: `gerar_requirements.py`
 
 ### Funcionalidades:
+
 - **Geração Automática de Requirements**: O script executa o comando `pip freeze` para listar todas as dependências instaladas no ambiente atual e salva essas informações em um arquivo `requirements.txt`.
 
 ### Como Utilizar:
+
 1. Execute o script:
    ```bash
    python gerar_requirements.py
@@ -66,6 +70,7 @@ Este projeto foi desenvolvido para realizar duas tarefas principais:
 ## Detalhes do Script Python: `persistir_dados_duckdb.py`
 
 ### Funcionalidades:
+
 - **Persistência de Dados**: O script lê os dados de arquivos CSV e os salva em tabelas de um banco de dados DuckDB.
 - **Parâmetros Personalizáveis**:
   - `csv_file`: Caminho para o arquivo CSV.
@@ -73,6 +78,7 @@ Este projeto foi desenvolvido para realizar duas tarefas principais:
   - `db_file`: Caminho para o arquivo DuckDB (padrão: `dados.db`).
 
 ### Como Utilizar:
+
 1. Execute o script diretamente para persistir os dados de exemplo:
    ```bash
    python persistir_dados_duckdb.py
@@ -84,6 +90,7 @@ Este projeto foi desenvolvido para realizar duas tarefas principais:
 ## Como Utilizar
 
 ### Notebook de Web Scraping
+
 1. Certifique-se de ter o `playwright` instalado:
    ```bash
    pip install playwright
@@ -93,6 +100,7 @@ Este projeto foi desenvolvido para realizar duas tarefas principais:
 3. O arquivo CSV será salvo no diretório especificado.
 
 ### Script de Extração de Dados do Petróleo
+
 1. Certifique-se de ter o `yfinance` instalado:
    ```bash
    pip install yfinance
@@ -111,6 +119,7 @@ Este projeto foi desenvolvido para realizar duas tarefas principais:
    ```
 
 ### Script de Persistência de Dados
+
 1. Certifique-se de ter o `duckdb` instalado:
    ```bash
    pip install duckdb
@@ -120,6 +129,7 @@ Este projeto foi desenvolvido para realizar duas tarefas principais:
 ---
 
 ## Requisitos
+
 - Python 3.8 ou superior.
 - Bibliotecas necessárias:
   - `playwright`
@@ -130,6 +140,7 @@ Este projeto foi desenvolvido para realizar duas tarefas principais:
 ---
 
 ## Estrutura do Projeto
+
 ```
 projeto_final/
 ├── scrapping_noticias_bbc.ipynb  # Notebook para web scraping de notícias.
@@ -141,8 +152,3 @@ projeto_final/
 ├── precos_brent_2024-01-01_to_2025-12-31.csv  # Exemplo de saída do script.
 ├── dados.db                      # Banco de dados DuckDB gerado.
 ```
-
----
-
-## Contato
-Para dúvidas ou sugestões, entre em contato com o desenvolvedor do projeto.
